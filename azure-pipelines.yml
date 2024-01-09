@@ -13,4 +13,12 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- task: UseJavaVersion@0
+  inputs:
+    versionSpec: '11'
 
+- script: |
+    # Commands to build and test your Java application
+    ./mvnw clean install  # For Maven
+    # Or use './gradlew build' for Gradle
+  displayName: 'Build and Test'
